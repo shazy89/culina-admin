@@ -19,9 +19,9 @@ export const getCompanies = () => async (dispatch) => {
 // Create or update company
 export const createOrUpdate = (formData, edit, history) => async (dispatch) => {
   try {
-    const res = await api.post("/companies", formData);
-
     if (edit) {
+      const res = await api.put("/companies/edit", formData);
+      debugger;
       dispatch({
         type: COMPANIES,
         payload: res.data
@@ -30,12 +30,14 @@ export const createOrUpdate = (formData, edit, history) => async (dispatch) => {
     }
 
     if (!edit) {
+      const res = await api.post("/companies/new", formData);
+
       dispatch({
         type: NEW_COMPANY,
-        payload: res.data.companyNew
+        payload: res.data.newCompany
       });
       dispatch(setAlert("Company Created", "success"));
-      history.push(`/companies/${res.data.companyNew._id}`);
+      history.push(`/companies/${res.data.newCompany._id}`);
     }
   } catch (err) {
     console.error(err);
