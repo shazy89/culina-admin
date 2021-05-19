@@ -22,7 +22,6 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
           />
         ) : (
           <h2>
-            Please{" "}
             {
               <Link
                 to={{

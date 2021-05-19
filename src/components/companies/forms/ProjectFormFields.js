@@ -301,7 +301,7 @@ const ProjectFormFields = () => {
               )}
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="notes">
-              <Form.Label className="font__size-2">Note</Form.Label>
+              <Form.Label className="font__size-2">Notes</Form.Label>
               <Form.Control
                 className="font__size-2"
                 as="textarea"

@@ -51,7 +51,12 @@ const Company = ({
                 New User
               </Button>
             </Link>
-            <Link to={`/companies/${id}/newproject`}>
+            <Link
+              to={{
+                pathname: `/companies/${id}/newproject`,
+                state: { companyName: findCompany.name }
+              }}
+            >
               {" "}
               <Button variant="secondary" className="culina__link">
                 New Project
