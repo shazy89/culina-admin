@@ -1,15 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Formik } from "formik";
 import { projectSchema } from "./constants";
 import { Form, Col, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const ProjectFormFields = () => {
+const ProjectFormFields = ({ id, history, edit }) => {
   return (
     <Formik
       initialValues={{
-        companyId: "",
+        companyId: id,
         projectName: "",
         contract: "",
         email: "",
@@ -41,7 +42,7 @@ const ProjectFormFields = () => {
       }) => (
         <Form className="u-margin-top-3" onSubmit={handleSubmit}>
           <Form.Row>
-            <Form.Group as={Col} md="4" controlId="firstName">
+            <Form.Group as={Col} md="6" controlId="contactCompanyName">
               <Form.Label className="font__size-2">Company Name</Form.Label>
               <Form.Control
                 className="font__size-2"
@@ -62,7 +63,7 @@ const ProjectFormFields = () => {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="firstName">
+            <Form.Group as={Col} md="6" controlId="firstName">
               <Form.Label className="font__size-2">Project Name</Form.Label>
               <Form.Control
                 className="font__size-2"
@@ -81,29 +82,28 @@ const ProjectFormFields = () => {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="firstName">
-              <Form.Label className="font__size-2">Contact Number</Form.Label>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} md="4" controlId="contactName">
+              <Form.Label className="font__size-2">Contact Name</Form.Label>
               <Form.Control
                 className="font__size-2"
                 type="text"
-                name="firstName"
-                placeholder="(111) 222-3344"
-                value={values.firstName}
+                name="contactName"
+                value={values.contactName}
                 onChange={handleChange}
-                isValid={touched.firstName && !errors.firstName}
+                isValid={touched.contactName && !errors.contactName}
               />
-              {errors.firstName ? (
+              {errors.contactName ? (
                 <p className="font__size-1 form_input-danger">
                   {" "}
-                  {errors.firstName}{" "}
+                  {errors.contactName}{" "}
                 </p>
               ) : (
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
-          </Form.Row>
-          <Form.Row>
-            <Form.Group as={Col} md="5" controlId="firstName">
+            <Form.Group as={Col} md="4" controlId="email">
               <Form.Label className="font__size-2">Email Address</Form.Label>
               <InputGroup>
                 <InputGroup.Prepend>
@@ -128,8 +128,30 @@ const ProjectFormFields = () => {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
-            <Form.Group as={Col} md="7" controlId="contract">
-              <Form.Label className="font__size-2">contract</Form.Label>
+            <Form.Group as={Col} md="4" controlId="contactNumber">
+              <Form.Label className="font__size-2">Contact Number</Form.Label>
+              <Form.Control
+                className="font__size-2"
+                type="text"
+                name="contactNumber"
+                placeholder="(111) 222-3344"
+                value={values.contactNumber}
+                onChange={handleChange}
+                isValid={touched.contactNumber && !errors.contactNumber}
+              />
+              {errors.contactNumber ? (
+                <p className="font__size-1 form_input-danger">
+                  {" "}
+                  {errors.contactNumber}{" "}
+                </p>
+              ) : (
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              )}
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} md="4" controlId="contract">
+              <Form.Label className="font__size-2">Contract</Form.Label>
               <InputGroup>
                 <InputGroup.Prepend>
                   <InputGroup.Text>$</InputGroup.Text>
@@ -152,8 +174,6 @@ const ProjectFormFields = () => {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
-          </Form.Row>
-          <Form.Row>
             <Form.Group as={Col} md="4" controlId="startDate">
               <div className="date--picker">
                 <Form.Label className="font__size-2">
