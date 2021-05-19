@@ -21,7 +21,7 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
             info={company.users}
           />
         ) : (
-          <h2>
+          <h2 className="text-center u-margin-top-3">
             {
               <Link
                 to={{
@@ -57,7 +57,7 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
         {company.projects.length ? (
           <ProjectsTable projects={company.projects} />
         ) : (
-          <h2>
+          <h2 className="u-margin-top-3">
             {
               <Link
                 to={{
