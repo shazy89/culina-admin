@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { connect } from "react-redux";
-import { Form, Col, Button } from "react-bootstrap";
+import { Form, Col, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -38,7 +38,7 @@ const ProjectFormFields = () => {
         setFieldValue,
         handleChange
       }) => (
-        <Form className="u-margin-top-big" onSubmit={handleSubmit}>
+        <Form className="u-margin-top-3" onSubmit={handleSubmit}>
           <Form.Row>
             <Form.Group as={Col} md="4" controlId="firstName">
               <Form.Label className="font__size-2">Company Name</Form.Label>
@@ -102,17 +102,22 @@ const ProjectFormFields = () => {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} md="4" controlId="firstName">
+            <Form.Group as={Col} md="5" controlId="firstName">
               <Form.Label className="font__size-2">Email Address</Form.Label>
-              <Form.Control
-                className="font__size-2"
-                type="text"
-                name="email"
-                placeholder="joe@culina.com"
-                value={values.email}
-                onChange={handleChange}
-                isValid={touched.email && !errors.email}
-              />
+              <InputGroup>
+                <InputGroup.Prepend>
+                  <InputGroup.Text>@</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                  className="font__size-2"
+                  type="text"
+                  name="email"
+                  placeholder="joe@culina.com"
+                  value={values.email}
+                  onChange={handleChange}
+                  isValid={touched.email && !errors.email}
+                />
+              </InputGroup>
               {errors.email ? (
                 <p className="font__size-1 form_input-danger">
                   {" "}
@@ -122,6 +127,32 @@ const ProjectFormFields = () => {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
+            <Form.Group as={Col} md="7" controlId="contract">
+              <Form.Label className="font__size-2">contract</Form.Label>
+              <InputGroup>
+                <InputGroup.Prepend>
+                  <InputGroup.Text>$</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                  className="font__size-2"
+                  type="text"
+                  name="contract"
+                  value={values.contract}
+                  onChange={handleChange}
+                  isValid={touched.contract && !errors.contract}
+                />
+              </InputGroup>
+              {errors.contract ? (
+                <p className="font__size-1 form_input-danger">
+                  {" "}
+                  {errors.contract}{" "}
+                </p>
+              ) : (
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              )}
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
             <Form.Group as={Col} md="4" controlId="startDate">
               <div className="date--picker">
                 <Form.Label className="font__size-2">
@@ -248,7 +279,56 @@ const ProjectFormFields = () => {
               )}
             </Form.Group>
           </Form.Row>
-          <button type="submit">Submit</button>
+          <Form.Row>
+            <Form.Group as={Col} md="6" controlId="Description">
+              <Form.Label className="font__size-2">Description</Form.Label>
+              <Form.Control
+                className="font__size-2"
+                as="textarea"
+                rows={5}
+                name="description"
+                value={values.description}
+                onChange={handleChange}
+                isValid={touched.description && !errors.description}
+              />
+              {errors.description ? (
+                <p className="font__size-1 form_input-danger">
+                  {" "}
+                  {errors.description}{" "}
+                </p>
+              ) : (
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              )}
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="notes">
+              <Form.Label className="font__size-2">Note</Form.Label>
+              <Form.Control
+                className="font__size-2"
+                as="textarea"
+                rows={5}
+                name="notes"
+                value={values.notes}
+                onChange={handleChange}
+                isValid={touched.notes && !errors.notes}
+              />
+              {errors.notes ? (
+                <p className="font__size-1 form_input-danger">
+                  {" "}
+                  {errors.notes}{" "}
+                </p>
+              ) : (
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              )}
+            </Form.Group>
+          </Form.Row>
+          <div className="button-box">
+            <Button
+              className="u-margin-top-small button-btn font__size-2"
+              type="submit"
+            >
+              Submit form
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>
