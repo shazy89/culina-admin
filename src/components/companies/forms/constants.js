@@ -54,3 +54,20 @@ export const editUserSchema = Yup.object().shape({
   state: Yup.string().required("Required"),
   zipCode: Yup.string().required("Required")
 });
+export const projectSchema = Yup.object().shape({
+  projectName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  contract: Yup.string().required("Required"),
+  email: Yup.string().required("Required"),
+  contactName: Yup.string().required("Required"),
+  contactCompanyName: Yup.string().required("Required"),
+  contactNumber: Yup.string().required("Required"),
+  startDate: Yup.string().required("Required"),
+  deadLine: Yup.string().required("Required"),
+  city: Yup.string().required("Required"),
+  state: Yup.string().required("Required"),
+  zipCode: Yup.string().required("Required"),
+  address: Yup.string().required("Required")
+});

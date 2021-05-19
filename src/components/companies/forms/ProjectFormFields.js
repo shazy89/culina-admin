@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
-import { connect } from "react-redux";
+import { projectSchema } from "./constants";
 import { Form, Col, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -25,6 +25,7 @@ const ProjectFormFields = () => {
         address: "",
         zipCode: ""
       }}
+      validationSchema={projectSchema}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 500));
         alert(JSON.stringify(values, null, 2));
