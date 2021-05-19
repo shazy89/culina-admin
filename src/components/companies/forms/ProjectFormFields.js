@@ -3,27 +3,27 @@ import { Formik } from "formik";
 import { connect } from "react-redux";
 import { Form, Col, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const ProjectFormFields = () => {
   return (
     <Formik
       initialValues={{
         companyId: "",
-        state: "",
         projectName: "",
-        city: "",
-        address: "",
-        zipCode: "",
-        startDate: "",
-        deadLine: "",
-        address: "",
         contract: "",
         email: "",
         contactName: "",
         contactCompanyName: "",
         contactNumber: "",
+        startDate: "",
+        deadLine: "",
         notes: "",
-        description: ""
+        description: "",
+        state: "",
+        city: "",
+        address: "",
+        zipCode: ""
       }}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 500));
@@ -86,6 +86,7 @@ const ProjectFormFields = () => {
                 className="font__size-2"
                 type="text"
                 name="firstName"
+                placeholder="(111) 222-3344"
                 value={values.firstName}
                 onChange={handleChange}
                 isValid={touched.firstName && !errors.firstName}
@@ -102,57 +103,67 @@ const ProjectFormFields = () => {
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="4" controlId="firstName">
-              <Form.Label className="font__size-2">Company Name</Form.Label>
-              <Form.Control
-                className="font__size-2"
-                type="text"
-                name="firstName"
-                value={values.firstName}
-                onChange={handleChange}
-                isValid={touched.firstName && !errors.firstName}
-              />
-              {errors.firstName ? (
-                <p className="font__size-1 form_input-danger">
-                  {" "}
-                  {errors.firstName}{" "}
-                </p>
-              ) : (
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              )}
-            </Form.Group>
-            <Form.Group as={Col} md="4" controlId="firstName">
               <Form.Label className="font__size-2">Email Address</Form.Label>
               <Form.Control
                 className="font__size-2"
                 type="text"
-                name="firstName"
-                value={values.firstName}
+                name="email"
+                placeholder="joe@culina.com"
+                value={values.email}
                 onChange={handleChange}
-                isValid={touched.firstName && !errors.firstName}
+                isValid={touched.email && !errors.email}
               />
-              {errors.firstName ? (
+              {errors.email ? (
                 <p className="font__size-1 form_input-danger">
                   {" "}
-                  {errors.firstName}{" "}
+                  {errors.email}{" "}
                 </p>
               ) : (
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               )}
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="firstName">
-              <Form.Label className="font__size-2">Contact Number</Form.Label>
-              <Form.Control
-                className="font__size-2"
-                type="text"
-                name="firstName"
-                value={values.firstName}
-                onChange={handleChange}
-                isValid={touched.firstName && !errors.firstName}
-              />
-              {errors.firstName ? (
+            <Form.Group as={Col} md="4" controlId="startDate">
+              <div className="date--picker">
+                <Form.Label className="font__size-2">
+                  Project Start Date{" "}
+                </Form.Label>
+
+                <DatePicker
+                  selected={values.startDate}
+                  dateFormat="MMMM d, yyyy"
+                  className="form-control font__size-2"
+                  name="startDate"
+                  onChange={(date) => setFieldValue("startDate", date)}
+                />
+              </div>
+              {errors.startDate ? (
                 <p className="font__size-1 form_input-danger">
                   {" "}
-                  {errors.firstName}{" "}
+                  {errors.startDate}{" "}
+                </p>
+              ) : (
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              )}
+            </Form.Group>
+
+            <Form.Group as={Col} md="4" controlId="deadLine">
+              <div className="date--picker">
+                <Form.Label className="font__size-2">
+                  Project Deadline{" "}
+                </Form.Label>
+
+                <DatePicker
+                  selected={values.deadLine}
+                  dateFormat="MMMM d, yyyy"
+                  className="form-control font__size-2"
+                  name="deadLine"
+                  onChange={(date) => setFieldValue("deadLine", date)}
+                />
+              </div>
+              {errors.deadLine ? (
+                <p className="font__size-1 form_input-danger">
+                  {" "}
+                  {errors.deadLine}{" "}
                 </p>
               ) : (
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
