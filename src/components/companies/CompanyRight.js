@@ -32,7 +32,7 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
                 Add
               </Link>
             }{" "}
-            projects to this company
+            users to this company
           </h2>
         )}
       </div>
@@ -68,7 +68,7 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
                 Add
               </Link>
             }{" "}
-            users to this company
+            projects to this company
           </h2>
         )}
       </div>
