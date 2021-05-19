@@ -4,7 +4,7 @@ import Slider from "components/layout/Slider";
 import CompanyUserCard from "./companyUsers/CompanyUserCard";
 import { Button } from "react-bootstrap";
 import AllUsersModal from "./companyUsers/AllUsersModal";
-// import ProjectsTable from "./project/ProjectsTable";
+import ProjectsTable from "./project/ProjectsTable";
 import PropTypes from "prop-types";
 
 const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
@@ -29,10 +29,10 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
                   state: { companyName: company.name }
                 }}
               >
-                add
+                Add
               </Link>
             }{" "}
-            users to this company
+            projects to this company
           </h2>
         )}
       </div>
@@ -54,9 +54,23 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
 
       <div className="projects__table u-margin-top-3 slider_company__header">
         <h2>{company.name} Projects</h2>
-        {
-          //<ProjectsTable projects={company.projects} />
-        }
+        {company.projects.length ? (
+          <ProjectsTable projects={company.projects} />
+        ) : (
+          <h2>
+            {
+              <Link
+                to={{
+                  pathname: `/companies/${id}/newproject`,
+                  state: { companyName: company.name }
+                }}
+              >
+                Add
+              </Link>
+            }{" "}
+            users to this company
+          </h2>
+        )}
       </div>
     </>
   );
