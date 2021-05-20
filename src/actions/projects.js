@@ -6,7 +6,10 @@ export const newOreditProject =
   (formData, edit, history) => async (dispatch) => {
     try {
       if (edit) {
-        const res = await api.put(`/culina/${formData.companyId}/project/edit`);
+        const res = await api.put(
+          `/culina/${formData.companyId}/project/edit`,
+          formData
+        );
         dispatch({
           type: EDIT_COMPANY_PROJECT,
           payload: res.data.companyProject
@@ -15,8 +18,10 @@ export const newOreditProject =
         dispatch(setAlert("Sucsess", "success"));
       }
       if (!edit) {
-        debugger;
-        const res = await api.post(`/culina/${formData.companyId}/project/new`);
+        const res = await api.post(
+          `/culina/${formData.companyId}/project/new`,
+          formData
+        );
 
         dispatch({
           type: NEW_COMPANY_PROJECT,
