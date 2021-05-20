@@ -5,8 +5,9 @@ import { projectSchema } from "./constants";
 import { Form, Col, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { newOreditProject } from "actions/projects";
 
-const ProjectFormFields = ({ id, history, edit }) => {
+const ProjectFormFields = ({ id, history, edit, newOreditProject }) => {
   return (
     <Formik
       initialValues={{
@@ -27,9 +28,8 @@ const ProjectFormFields = ({ id, history, edit }) => {
         zipCode: ""
       }}
       validationSchema={projectSchema}
-      onSubmit={async (values) => {
-        await new Promise((r) => setTimeout(r, 500));
-        alert(JSON.stringify(values, null, 2));
+      onSubmit={(values, actions) => {
+        newOreditProject(values, false, history);
       }}
     >
       {({
@@ -356,4 +356,4 @@ const ProjectFormFields = ({ id, history, edit }) => {
   );
 };
 
-export default ProjectFormFields;
+export default connect(null, { newOreditProject })(ProjectFormFields);
