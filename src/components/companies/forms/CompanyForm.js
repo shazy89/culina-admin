@@ -33,26 +33,24 @@ const CompanyForm = ({ history, alerts, createOrUpdate }) => {
   };
 
   return (
-    <div>
+    <>
       <h1>New Company</h1>
-      <div>
-        <Container>
-          {alerts && <Alert />}
-          <form onSubmit={onSubmit} className="newCompany">
-            <FormInput onChange={onChange} />
-            <div className="button-box">
-              <Button
-                type="submit"
-                variant="success"
-                className="u-margin-top-small button-btn"
-              >
-                Submit
-              </Button>
-            </div>
-          </form>
-        </Container>
-      </div>
-    </div>
+      <Container>
+        {alerts && <Alert />}
+        <form onSubmit={onSubmit} className="newCompany">
+          <FormInput onChange={onChange} />
+          <div className="button-box">
+            <Button
+              type="submit"
+              variant="success"
+              className="u-margin-top-small button-btn"
+            >
+              Submit
+            </Button>
+          </div>
+        </form>
+      </Container>
+    </>
   );
 };
 const mapStateProps = (state) => ({
