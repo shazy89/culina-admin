@@ -1,3 +1,10 @@
 .danger {
     background-color: rgba(248, 94, 94, 0.801);
 }
+
+.background {
+    &-completed {background-color: rgb(119, 214, 119);}
+    &-inProgress { background-color: rgba(248, 207, 94, 0.801);}
+    &-notStarted { background-color: rgba(248, 94, 94, 0.801);}
+
+}

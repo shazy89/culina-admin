@@ -238,6 +238,17 @@ body {
   display: flex;
   box-shadow: 0px 7px 34px -4px black; }
 
+.table__status {
+  display: flex; }
+  .table__status-label {
+    display: flex;
+    margin-right: 1rem; }
+  .table__status-box {
+    width: 1rem;
+    height: 1rem;
+    border: .5px solid black;
+    margin-right: 1rem; }
+
 .culina__auth--card {
   height: 70%;
   width: 45rem;
@@ -505,6 +516,15 @@ body {
   color: #15c015; }
 
 .danger {
+  background-color: rgba(248, 94, 94, 0.801); }
+
+.background-completed {
+  background-color: #77d677; }
+
+.background-inProgress {
+  background-color: rgba(248, 207, 94, 0.801); }
+
+.background-notStarted {
   background-color: rgba(248, 94, 94, 0.801); }
 
 .slider--box {

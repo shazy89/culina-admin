@@ -7,9 +7,9 @@ const ProjectsTable = ({ projects }) => {
     return (
       <tr key={index}>
         <th>{index}</th>
-        <th>{project.contactName}</th>
-        <th>{project.email}</th>
+        <th>{project.contactCompanyName}</th>
         <th>{project.projectName}</th>
+        <th>{project.email}</th>
       </tr>
     );
   });
@@ -18,9 +18,9 @@ const ProjectsTable = ({ projects }) => {
       <thead>
         <tr>
           <th>#</th>
-          <th>Contact Name</th>
-          <th>email</th>
+          <th>Client</th>
           <th>Project</th>
+          <th>email</th>
         </tr>
       </thead>
       <tbody className="font-size-normal">{table}</tbody>
