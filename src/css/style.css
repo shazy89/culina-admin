@@ -51,6 +51,9 @@ body {
 .font__size-7 {
   font-size: 4rem !important; }
 
+.text__color-blue {
+  color: rgba(36, 36, 206, 0.884) !important; }
+
 .u-center-text {
   text-align: center !important; }
 

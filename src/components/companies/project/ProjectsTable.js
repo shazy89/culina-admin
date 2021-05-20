@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
 
@@ -27,12 +28,16 @@ const ProjectsTable = ({ projects, companyId }) => {
           </a>
         </th>
         <th>
-          <Button
-            href={`/companies/${companyId}/project/${project.projectName}`}
+          <Link
+            className="culina--link font-size-1 text__color-blue"
+            to={{
+              pathname: `/companies/${companyId}/project/${project.projectName}`,
+              state: { companyId, projectId: project.projectId }
+            }}
             variant="link"
           >
             View{" "}
-          </Button>
+          </Link>
         </th>
       </tr>
     );
