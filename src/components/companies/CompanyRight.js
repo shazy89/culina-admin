@@ -52,21 +52,21 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
         />
       </div>
 
-      <div className="projects__table u-margin-top-3 slider_company__header">
+      <div className="u-margin-top-3 slider_company__header">
         <h2>{company.name} Projects</h2>
 
         {company.projects.length ? (
           <>
             <div className="table__status">
-              <p className="table__status-label font__size-1">
+              <p className="table__status-label font__size-2">
                 Completed &nbsp;
                 <span className="table__status-box background-completed"></span>
               </p>{" "}
-              <p className="table__status-label font__size-1">
+              <p className="table__status-label font__size-2">
                 In Progress &nbsp;
                 <span className="table__status-box background-inProgress"></span>
               </p>{" "}
-              <p className="table__status-label font__size-1">
+              <p className="table__status-label font__size-2">
                 Not Sarted &nbsp;
                 <span className="table__status-box background-notStarted"></span>
               </p>{" "}
