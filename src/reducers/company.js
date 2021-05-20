@@ -5,7 +5,9 @@ import {
   DELETE_COMPANY,
   NEW_COMPANY_USER,
   EDIT_COMPANY_USER,
-  REMOVE_COMPANY_USER
+  REMOVE_COMPANY_USER,
+  EDIT_COMPANY_PROJECT,
+  NEW_COMPANY_PROJECT
 } from "../actions/types";
 const initialState = { companies: [], loading: true };
 
@@ -40,6 +42,8 @@ export default function (state = initialState, action) {
         companies: state.companies.filter((company) => company._id !== payload),
         loading: false
       };
+    case NEW_COMPANY_PROJECT:
+    case EDIT_COMPANY_PROJECT:
     case REMOVE_COMPANY_USER:
     case EDIT_COMPANY_USER:
     case NEW_COMPANY_USER:

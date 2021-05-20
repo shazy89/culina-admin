@@ -8,12 +8,16 @@ export const newOreditProject =
       if (edit) {
         const res = await api.put(`/culina/${formData.company}/project/edit`);
         dispatch({
-          type: EDIT_COMPANY_USER,
-          payload: res.data.company
+          type: EDIT_COMPANY_PROJECT,
+          payload: res.data.companyProject
         });
       }
       if (!edit) {
         const res = await api.post(`/culina/${formData.company}/project/new`);
+        dispatch({
+          type: NEW_COMPANY_PROJECT,
+          payload: res.data.companyProject
+        });
       }
     } catch (err) {
       if (err) {
