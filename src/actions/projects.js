@@ -6,22 +6,23 @@ export const newOreditProject =
   (formData, edit, history) => async (dispatch) => {
     try {
       if (edit) {
-        const res = await api.put(`/culina/${formData.company}/project/edit`);
+        const res = await api.put(`/culina/${formData.companyId}/project/edit`);
         dispatch({
           type: EDIT_COMPANY_PROJECT,
           payload: res.data.companyProject
         });
-        history.push(`/companies/${formData.company}`);
+        history.push(`/companies/${formData.companyId}`);
         dispatch(setAlert("Sucsess", "success"));
       }
       if (!edit) {
-        const res = await api.post(`/culina/${formData.company}/project/new`);
         debugger;
+        const res = await api.post(`/culina/${formData.companyId}/project/new`);
+
         dispatch({
           type: NEW_COMPANY_PROJECT,
           payload: res.data.companyProject
         });
-        history.push(`/companies/${formData.company}`);
+        history.push(`/companies/${formData.companyId}`);
         dispatch(setAlert("Sucsess", "success"));
       }
     } catch (err) {
