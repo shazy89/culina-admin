@@ -225,6 +225,23 @@ body {
   border-radius: 50%;
   background: white; }
 
+.project__box {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly; }
+
+.project__info--box-1 {
+  width: 48%;
+  height: 30%;
+  border: 1px solid black;
+  padding: .8rem; }
+
+.project__info--box-2 {
+  width: 48%;
+  height: 30%;
+  border: 1px solid black; }
+
 .user__profile-box {
   display: flex;
   justify-content: space-between; }
