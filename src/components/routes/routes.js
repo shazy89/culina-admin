@@ -12,6 +12,7 @@ import AddUser from "../companies/forms/AddUser";
 import UserProfile from "components/companies/companyUsers/UserProfile";
 import EditUser from "components/companies/companyUsers/EditUser";
 import AddProject from "../companies/forms/AddProject";
+import CompanyProject from "components/companies/project/CompanyProject";
 
 const Routes = () => {
   return (
@@ -38,6 +39,11 @@ const Routes = () => {
               exact
               path="/companies/:id/newuser"
               component={AddUser}
+            />
+            <PrivateRoute
+              exact
+              path="/companies/:id/project/:projectName"
+              component={CompanyProject}
             />
             <PrivateRoute
               exact
