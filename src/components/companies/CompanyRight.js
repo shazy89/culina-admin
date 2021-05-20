@@ -71,7 +71,10 @@ const CompanyRight = ({ company, id, show, handleClose, handleShow }) => {
                 <span className="table__status-box background-notStarted"></span>
               </p>{" "}
             </div>
-            <ProjectsTable projects={company.projects} />
+            <ProjectsTable
+              companyId={company._id}
+              projects={company.projects}
+            />
           </>
         ) : (
           <h2 className="u-margin-top-3">

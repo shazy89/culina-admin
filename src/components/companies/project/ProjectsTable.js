@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Table, Button } from "react-bootstrap";
 
-const ProjectsTable = ({ projects }) => {
+const ProjectsTable = ({ projects, companyId }) => {
   const table = projects.map((project, index) => {
     return (
       <tr
@@ -27,7 +27,12 @@ const ProjectsTable = ({ projects }) => {
           </a>
         </th>
         <th>
-          <Button variant="link">View </Button>
+          <Button
+            href={`/companies/${companyId}/project/${project.projectName}`}
+            variant="link"
+          >
+            View{" "}
+          </Button>
         </th>
       </tr>
     );
