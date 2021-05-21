@@ -14,8 +14,10 @@ const ProjectContactInfo = ({
 }) => {
   return (
     <>
-      <div className="text-center border-bottom padding--05">
-        <h3>Contact</h3>
+      <div className="text-center border-bottom">
+        <div className="border-bottom background__color-initial-gray">
+          <h3>Contact</h3>
+        </div>
         <h3>
           {contactName}&nbsp;&nbsp;&nbsp;{email}
         </h3>

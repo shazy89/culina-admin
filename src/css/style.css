@@ -102,6 +102,24 @@ body {
 .padding--3 {
   padding: 3rem; }
 
+.padding_lr-05 {
+  padding: 0 .5rem; }
+
+.padding_lr-1 {
+  padding: 0 1rem; }
+
+.padding_lr-2 {
+  padding: 0 2rem; }
+
+.padding_tb-05 {
+  padding: 0 .5rem; }
+
+.padding_lr-1 {
+  padding: 0 1rem; }
+
+.padding_lr-2 {
+  padding: 0 2rem; }
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -142,6 +160,9 @@ body {
 
 .background__color-gray-light {
   background-color: #e6e6e6; }
+
+.background__color-initial-gray {
+  background-color: rgba(230, 230, 230, 0.562); }
 
 .background__color-yellow {
   background-color: #13ebce; }
@@ -259,8 +280,7 @@ body {
 .project__info--box-2 {
   width: 48%;
   height: 30%;
-  border: 1px solid black;
-  padding: .8rem; }
+  border: 1px solid black; }
 
 .project__info-header {
   margin-left: 2rem; }
