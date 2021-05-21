@@ -147,6 +147,11 @@ body {
 .culina--link:hover, .culina--link:active {
   text-decoration: none !important; }
 
+.culina--btn {
+  text-decoration: none !important; }
+  .culina--btn :focus {
+    box-shadow: none !important; }
+
 .child__left {
   display: flex;
   justify-content: flex-end; }

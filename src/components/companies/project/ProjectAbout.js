@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Accordion, Card, Button } from "react-bootstrap";
 
 const ProjectAbout = ({ projectInfo: { description, notes } }) => {
@@ -8,7 +7,7 @@ const ProjectAbout = ({ projectInfo: { description, notes } }) => {
       <Card>
         <Card.Header>
           <Accordion.Toggle
-            className="font__size-2"
+            className="font__size-3 culina--btn"
             as={Button}
             variant="link"
             eventKey="0"
@@ -17,13 +16,13 @@ const ProjectAbout = ({ projectInfo: { description, notes } }) => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>{description}</Card.Body>
+          <Card.Body className="font__size-2">{description}</Card.Body>
         </Accordion.Collapse>
       </Card>
       <Card>
         <Card.Header>
           <Accordion.Toggle
-            className="font__size-2"
+            className="font__size-3 culina--btn"
             as={Button}
             variant="link"
             eventKey="1"
@@ -32,15 +31,11 @@ const ProjectAbout = ({ projectInfo: { description, notes } }) => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
-          <Card.Body>{notes}</Card.Body>
+          <Card.Body className="font__size-2">{notes}</Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>
   );
-};
-
-ProjectAbout.propTypes = {
-  projectInfo: PropTypes.object.isRequired
 };
 
 export default ProjectAbout;

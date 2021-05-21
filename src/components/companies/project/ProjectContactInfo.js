@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const ProjectContactInfo = ({
   projectInfo: {
@@ -39,11 +38,6 @@ const ProjectContactInfo = ({
       </div>
     </>
   );
-};
-//<Card.Text>{`${address}/${city}`} </Card.Text>
-//<Card.Text>{`${state}-${country}`} </Card.Text>
-ProjectContactInfo.propTypes = {
-  projectInfo: PropTypes.object.isRequired
 };
 
 export default ProjectContactInfo;

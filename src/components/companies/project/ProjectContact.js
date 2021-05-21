@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 const ProjectContact = ({
   projectInfo: {
     contactCompanyName,
@@ -27,10 +27,6 @@ const ProjectContact = ({
       </p>
     </>
   );
-};
-
-ProjectContact.propTypes = {
-  projectInfo: PropTypes.object.isRequired
 };
 
 export default ProjectContact;

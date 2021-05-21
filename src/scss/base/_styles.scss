@@ -13,6 +13,13 @@
  } 
 
 }
+.culina--btn {
+    text-decoration: none !important;
+    :focus {
+        box-shadow: none !important;
+    }
+  
+}
 .child {
     &__left {
         display: flex;
