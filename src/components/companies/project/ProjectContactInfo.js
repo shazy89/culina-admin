@@ -19,7 +19,10 @@ const ProjectContactInfo = ({
           <h3 className="padding_lr-1">Contact</h3>
         </div>
         <h3 className="text-center">
-          {contactName}&nbsp;&nbsp;&nbsp;{email}
+          {contactName}&nbsp;&nbsp;&nbsp;{" "}
+          <a className="font-size-normal culina--link" href={`mailto:${email}`}>
+            {email}
+          </a>
         </h3>
         <h4 className="text-center">{contactNumber}</h4>
       </div>

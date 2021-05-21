@@ -24,7 +24,7 @@ const CompanyProject = ({
     };
     fetchProjectInfo();
   }, []);
-  console.log(projectInfo);
+
   return (
     <div className="h-100">
       <div>
@@ -46,11 +46,13 @@ const CompanyProject = ({
             }
           </>
           <div className="project__box ">
-            <div className="project__info--box-1">
-              <ProjectContact projectInfo={projectInfo} />
-            </div>
-            <div className="project__info--box-2">
-              <ProjectContractInfo projectInfo={projectInfo} />
+            <div className="project__info">
+              <div className="project__info--box-1">
+                <ProjectContact projectInfo={projectInfo} />
+              </div>
+              <div className="project__info--box-2">
+                <ProjectContractInfo projectInfo={projectInfo} />
+              </div>
             </div>
           </div>
         </div>
