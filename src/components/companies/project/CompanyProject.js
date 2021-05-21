@@ -15,7 +15,7 @@ const CompanyProject = ({
   }
 }) => {
   const [projectInfo, setProjectInfo] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProjectInfo = async () => {
@@ -25,9 +25,9 @@ const CompanyProject = ({
     };
     fetchProjectInfo();
   }, []);
-  console.log(projectInfo);
+
   return (
-    <div className="h-100">
+    <>
       <div>
         <Back history={history} />
       </div>
@@ -35,17 +35,13 @@ const CompanyProject = ({
         <Spinner />
       ) : (
         <div className="h-100">
-          <>
-            {
-              <h4 className="user__profile-edit">
-                Edit{" "}
-                <Link className="culina--link" to="#">
-                  {" "}
-                  <Edit className="company__edit--button" />{" "}
-                </Link>
-              </h4>
-            }
-          </>
+          <h4 className="user__profile-edit">
+            Edit{" "}
+            <Link className="culina--link" to="#">
+              {" "}
+              <Edit className="company__edit--button" />{" "}
+            </Link>
+          </h4>
           <div className="project__box ">
             <div className="project__info">
               <div className="project__info--box-1">
@@ -61,7 +57,7 @@ const CompanyProject = ({
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
