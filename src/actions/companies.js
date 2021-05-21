@@ -21,7 +21,7 @@ export const createOrUpdate = (formData, edit, history) => async (dispatch) => {
   try {
     if (edit) {
       const res = await api.put("/companies/edit", formData);
-      debugger;
+
       dispatch({
         type: COMPANIES,
         payload: res.data

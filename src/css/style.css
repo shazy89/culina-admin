@@ -274,13 +274,13 @@ body {
 .project__info--box-1 {
   width: 48%;
   height: 30%;
-  border: 1px solid black;
-  padding: .8rem; }
+  padding: .8rem;
+  box-shadow: 3px 2px 15px -2px grey; }
 
 .project__info--box-2 {
   width: 48%;
   height: 30%;
-  border: 1px solid black; }
+  box-shadow: 3px 2px 15px -2px grey; }
 
 .project__info-header {
   margin-left: 2rem; }
