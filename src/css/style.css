@@ -271,19 +271,19 @@ body {
 
 .project__info {
   width: 100%;
-  height: 100%;
+  height: 30%;
   display: flex;
   justify-content: space-evenly; }
 
 .project__info--box-1 {
   width: 48%;
-  height: 30%;
+  height: 100%;
   padding: .8rem;
   box-shadow: 3px 2px 15px -2px grey; }
 
 .project__info--box-2 {
   width: 48%;
-  height: 30%;
+  height: 100%;
   box-shadow: 3px 2px 15px -2px grey; }
 
 .project__info--box-3 {

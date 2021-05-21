@@ -54,6 +54,7 @@ const CompanyProject = ({
                 <ProjectContractInfo projectInfo={projectInfo} />
               </div>
             </div>
+            <div className="project__info--box-3"></div>
           </div>
         </div>
       )}
