@@ -5,6 +5,7 @@ import api from "utils/api";
 import Spinner from "components/layout/Spinner";
 import { Edit } from "react-feather";
 import ProjectContact from "./ProjectContact";
+import ProjectContractInfo from "./ProjectContactInfo";
 
 const CompanyProject = ({
   history,
@@ -44,11 +45,13 @@ const CompanyProject = ({
               </h4>
             }
           </>
-          <div className="project__box font">
+          <div className="project__box ">
             <div className="project__info--box-1">
               <ProjectContact projectInfo={projectInfo} />
             </div>
-            <div className="project__info--box-2"></div>
+            <div className="project__info--box-2">
+              <ProjectContractInfo projectInfo={projectInfo} />
+            </div>
           </div>
         </div>
       )}

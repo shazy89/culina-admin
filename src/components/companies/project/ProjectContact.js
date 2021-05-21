@@ -1,23 +1,36 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 const ProjectContact = ({
-  projectInfo: { contactCompanyName, projectName, startDate }
+  projectInfo: {
+    contactCompanyName,
+    projectName,
+    startDate,
+    deadLine,
+    contract
+  }
 }) => {
   return (
     <>
       <h2 className="project__info-header text-center">
-        {contactCompanyName} {projectName}
+        {contactCompanyName} &nbsp; {projectName}
       </h2>
-      <div className="display-flex">
+      <div className="display-flex u-margin-top">
         <p className="font__size-2 background__color-gray padding--05">
-          Start Date {new Date(startDate).toDateString()}
+          Start Date - {new Date(startDate).toDateString()}
         </p>
         <p className="font__size-2 background__color-gray-light padding--05">
-          Start Date {new Date(startDate).toDateString()}
+          Deadline - {new Date(deadLine).toDateString()}
         </p>
       </div>
+      <p className="font__size-3 text-center u-margin-top">
+        Contract {contract}
+      </p>
     </>
   );
+};
+
+ProjectContact.propTypes = {
+  projectInfo: PropTypes.object.isRequired
 };
 
 export default ProjectContact;
