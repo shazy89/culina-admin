@@ -6,6 +6,7 @@ import Spinner from "components/layout/Spinner";
 import { Edit } from "react-feather";
 import ProjectContact from "./ProjectContact";
 import ProjectContractInfo from "./ProjectContactInfo";
+import ProjectAbout from "./ProjectAbout";
 
 const CompanyProject = ({
   history,
@@ -24,7 +25,7 @@ const CompanyProject = ({
     };
     fetchProjectInfo();
   }, []);
-
+  console.log(projectInfo);
   return (
     <div className="h-100">
       <div>
@@ -54,7 +55,9 @@ const CompanyProject = ({
                 <ProjectContractInfo projectInfo={projectInfo} />
               </div>
             </div>
-            <div className="project__info--box-3"></div>
+            <div className="project__info--box-3 u-margin-top-3">
+              <ProjectAbout projectInfo={projectInfo} />
+            </div>
           </div>
         </div>
       )}
