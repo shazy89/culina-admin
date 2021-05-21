@@ -39,18 +39,20 @@ const UserProfile = ({
             <UserAdress profileInfo={profileInfo} />
           </div>
           <div className="w-50 padding--1">
-            <Link
-              className="culina--link"
-              to={{
-                pathname: `/companies/${id}/user/${userId}/edit`,
-                state: { profileInfo }
-              }}
-            >
-              {" "}
-              <h4 className="user__profile-edit">
-                Edit <Edit className="company__edit--button" />
-              </h4>
-            </Link>
+            <h4 className="user__profile-edit">
+              Edit{" "}
+              <Link
+                className="culina--link"
+                to={{
+                  pathname: `/companies/${id}/user/${userId}/edit`,
+                  state: { profileInfo }
+                }}
+              >
+                {" "}
+                <Edit className="company__edit--button" />{" "}
+              </Link>
+            </h4>
+
             <UserSalary profileInfo={profileInfo} />
           </div>
         </div>

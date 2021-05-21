@@ -5,8 +5,8 @@ const ProjectContact = ({
 }) => {
   return (
     <>
-      <h2 className="project__info-header">
-        {contactCompanyName} - {projectName}
+      <h2 className="project__info-header text-center">
+        {contactCompanyName} {projectName}
       </h2>
       <div className="display-flex">
         <p className="font__size-2 background__color-gray padding--05">

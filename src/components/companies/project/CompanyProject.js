@@ -35,12 +35,13 @@ const CompanyProject = ({
         <div className="h-100">
           <>
             {
-              <Link className="culina--link" to="#">
-                {" "}
-                <h4 className="user__profile-edit">
-                  Edit <Edit className="company__edit--button" />
-                </h4>
-              </Link>
+              <h4 className="user__profile-edit">
+                Edit{" "}
+                <Link className="culina--link" to="#">
+                  {" "}
+                  <Edit className="company__edit--button" />{" "}
+                </Link>
+              </h4>
             }
           </>
           <div className="project__box font">
