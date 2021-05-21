@@ -16,7 +16,6 @@ const CompanyInfo = ({ company: { name, email, adress, phone, timeZone } }) => {
         <p className="font-size-normal">
           Contact Number: {phone}
           <br />
-          <br />
           {timeZone}
         </p>
       </div>

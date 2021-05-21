@@ -87,6 +87,9 @@ body {
 .w-60 {
   width: 60%; }
 
+.padding--05 {
+  padding: .5rem; }
+
 .padding--1 {
   padding: 1rem; }
 
@@ -126,6 +129,16 @@ body {
 .child__left {
   display: flex;
   justify-content: flex-end; }
+
+.display-flex {
+  display: flex;
+  justify-content: space-evenly; }
+
+.background__color-gray {
+  background-color: #cfcfcf; }
+
+.background__color-gray-light {
+  background-color: #e6e6e6; }
 
 .login {
   height: 93vh;
@@ -241,6 +254,9 @@ body {
   width: 48%;
   height: 30%;
   border: 1px solid black; }
+
+.project__info-header {
+  margin-left: 2rem; }
 
 .user__profile-box {
   display: flex;

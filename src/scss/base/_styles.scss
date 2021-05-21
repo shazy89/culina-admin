@@ -19,3 +19,15 @@
         justify-content: flex-end;
     }
 }
+.display-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+.background__color {
+    &-gray {
+        background-color: rgb(207, 207, 207);
+    }
+    &-gray-light {
+        background-color: rgb(230, 230, 230);
+    }
+}
