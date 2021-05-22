@@ -3,12 +3,23 @@ import { connect } from "react-redux";
 import Back from "components/reusable/Back";
 import ProjectFormFields from "../forms/ProjectFormFields";
 
-const EditProject = () => {
+const EditProject = ({
+  history,
+  match: {
+    params: { id, projectName }
+  },
+  location: {
+    state: { projectInfo }
+  }
+}) => {
   const edit = true;
   return (
-    <div>
-      <h1>HEY THErE</h1>
-    </div>
+    <>
+      <div>
+        <Back history={history} />
+      </div>
+      <h2 className="text-center">Edit {projectName}</h2>
+    </>
   );
 };
 
