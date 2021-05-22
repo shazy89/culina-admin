@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
+import { ChevronDown } from "react-feather";
 
 const ProjectAbout = ({ projectInfo: { description, notes } }) => {
   return (
@@ -12,7 +13,7 @@ const ProjectAbout = ({ projectInfo: { description, notes } }) => {
             variant="link"
             eventKey="0"
           >
-            Content
+            Content <ChevronDown />
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
@@ -27,7 +28,7 @@ const ProjectAbout = ({ projectInfo: { description, notes } }) => {
             variant="link"
             eventKey="1"
           >
-            Notes
+            Notes <ChevronDown />
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">

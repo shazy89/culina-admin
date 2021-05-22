@@ -148,9 +148,13 @@ body {
   text-decoration: none !important; }
 
 .culina--btn {
-  text-decoration: none !important; }
-  .culina--btn :focus {
-    box-shadow: none !important; }
+  text-decoration: none !important;
+  color: #272727; }
+  .culina--btn:focus {
+    box-shadow: none !important;
+    color: #272727; }
+  .culina--btn:hover {
+    color: rgba(39, 39, 39, 0.575); }
 
 .child__left {
   display: flex;

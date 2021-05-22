@@ -15,8 +15,13 @@
 }
 .culina--btn {
     text-decoration: none !important;
-    :focus {
+    color: rgb(39, 39, 39);
+    &:focus {
         box-shadow: none !important;
+        color: rgb(39, 39, 39);
+    }
+    &:hover {
+        color: rgba(39, 39, 39, 0.575);
     }
   
 }
