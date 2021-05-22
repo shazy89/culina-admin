@@ -19,6 +19,7 @@ const EditProject = ({
         <Back history={history} />
       </div>
       <h2 className="text-center">Edit {projectName}</h2>
+      <ProjectFormFields edit={edit} projectInfo={projectInfo} />
     </>
   );
 };
