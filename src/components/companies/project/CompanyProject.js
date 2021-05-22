@@ -24,7 +24,7 @@ const CompanyProject = ({
       setLoading(false);
     };
     fetchProjectInfo();
-  }, []);
+  }, [companyId, projectId]);
 
   return (
     <>
@@ -37,7 +37,13 @@ const CompanyProject = ({
         <div className="h-100">
           <h4 className="user__profile-edit">
             Edit{" "}
-            <Link className="culina--link" to="#">
+            <Link
+              className="culina--link"
+              to={{
+                pathname: `/companies/${companyId}/project/${projectInfo.projectName}/edit`,
+                state: { projectInfo }
+              }}
+            >
               {" "}
               <Edit className="company__edit--button" />{" "}
             </Link>

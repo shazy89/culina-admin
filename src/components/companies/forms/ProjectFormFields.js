@@ -7,26 +7,52 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { newOreditProject } from "actions/projects";
 
-const ProjectFormFields = ({ id, history, edit, newOreditProject }) => {
+const ProjectFormFields = ({
+  id,
+  history,
+  edit,
+  newOreditProject,
+  projectInfo
+}) => {
   return (
     <Formik
-      initialValues={{
-        companyId: id,
-        projectName: "",
-        contract: "",
-        email: "",
-        contactName: "",
-        contactCompanyName: "",
-        contactNumber: "",
-        startDate: "",
-        deadLine: "",
-        notes: "",
-        description: "",
-        state: "",
-        city: "",
-        address: "",
-        zipCode: ""
-      }}
+      initialValues={
+        edit
+          ? {
+              companyId: id,
+              projectName: projectInfo.projectName,
+              contract: projectInfo.contract,
+              email: projectInfo.email,
+              contactName: projectInfo.contactName,
+              contactCompanyName: projectInfo.contactCompanyName,
+              contactNumber: projectInfo.contactNumber,
+              startDate: projectInfo.startDate,
+              deadLine: projectInfo.deadLine,
+              notes: projectInfo.notes,
+              description: projectInfo.description,
+              state: projectInfo.state,
+              city: projectInfo.city,
+              address: projectInfo.address,
+              zipCode: projectInfo.zipCode
+            }
+          : {
+              companyId: id,
+              projectName: "",
+              contract: "",
+              email: "",
+              contactName: "",
+              contactCompanyName: "",
+              contactNumber: "",
+              startDate: "",
+              deadLine: "",
+              notes: "",
+              description: "",
+              state: "",
+              city: "",
+              address: "",
+              zipCode: ""
+            }
+      }
       validationSchema={projectSchema}
       onSubmit={(values, actions) => {
         newOreditProject(values, false, history);

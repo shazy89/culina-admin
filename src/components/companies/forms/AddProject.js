@@ -8,7 +8,7 @@ const AddProject = ({
     params: { id }
   }
 }) => {
-  let edit = false;
+  const edit = false;
   return (
     <>
       <div>
