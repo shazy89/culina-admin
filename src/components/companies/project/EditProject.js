@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import Back from "components/reusable/Back";
 import ProjectFormFields from "../forms/ProjectFormFields";
-
+import Alert from "components/layout/Alerts";
 const EditProject = ({
   history,
+  alerts,
   match: {
     params: { id, projectName }
   },
@@ -18,10 +19,18 @@ const EditProject = ({
       <div>
         <Back history={history} />
       </div>
+      {alerts && <Alert />}
       <h2 className="text-center">Edit {projectName}</h2>
-      <ProjectFormFields edit={edit} projectInfo={projectInfo} />
+      <ProjectFormFields
+        id={id}
+        edit={edit}
+        projectInfo={projectInfo}
+        history={history}
+      />
     </>
   );
 };
-
-export default EditProject;
+const mapStateProps = (state) => ({
+  alerts: state.alert
+});
+export default connect(mapStateProps)(EditProject);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import Back from "components/reusable/Back";
 import api from "utils/api";
 import Spinner from "components/layout/Spinner";
@@ -7,12 +8,14 @@ import { Edit } from "react-feather";
 import ProjectContact from "./ProjectContact";
 import ProjectContractInfo from "./ProjectContactInfo";
 import ProjectAbout from "./ProjectAbout";
+import Alert from "components/layout/Alerts";
 
 const CompanyProject = ({
   history,
   location: {
     state: { companyId, projectId }
-  }
+  },
+  alerts
 }) => {
   const [projectInfo, setProjectInfo] = useState("");
   const [loading, setLoading] = useState(true);
@@ -31,6 +34,7 @@ const CompanyProject = ({
       <div>
         <Back history={history} />
       </div>
+      {alerts && <Alert />}
       {loading ? (
         <Spinner />
       ) : (
@@ -66,5 +70,7 @@ const CompanyProject = ({
     </>
   );
 };
-
-export default CompanyProject;
+const mapStateProps = (state) => ({
+  alerts: state.alert
+});
+export default connect(mapStateProps)(CompanyProject);

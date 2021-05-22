@@ -19,6 +19,7 @@ const ProjectFormFields = ({
       initialValues={
         edit
           ? {
+              id: projectInfo._id,
               companyId: id,
               projectName: projectInfo.projectName,
               contract: projectInfo.contract,
@@ -55,7 +56,8 @@ const ProjectFormFields = ({
       }
       validationSchema={projectSchema}
       onSubmit={(values, actions) => {
-        newOreditProject(values, false, history);
+        newOreditProject(values, edit, history);
+        !edit && actions.resetForm();
       }}
     >
       {({

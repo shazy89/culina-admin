@@ -1,7 +1,7 @@
 import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import Back from "components/reusable/Back";
-import AddUserFormFields from "./AddUserFormFields";
+import AddUserFormFields from "./UserFormFields";
 
 const AddUser = ({
   match: {

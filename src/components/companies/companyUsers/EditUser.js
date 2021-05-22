@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import AddUserFormFields from "../forms/AddUserFormFields";
+import AddUserFormFields from "../forms/UserFormFields";
 import { Button } from "react-bootstrap";
 import "react-datepicker/dist/react-datepicker.css";
 import { newUserSchema } from "../forms/constants";

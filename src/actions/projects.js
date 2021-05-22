@@ -10,11 +10,12 @@ export const newOreditProject =
           `/culina/${formData.companyId}/project/edit`,
           formData
         );
+
         dispatch({
           type: EDIT_COMPANY_PROJECT,
           payload: res.data.companyProject
         });
-        history.push(`/companies/${formData.companyId}`);
+
         dispatch(setAlert("Sucsess", "success"));
       }
       if (!edit) {
