@@ -28,7 +28,7 @@ const ProjectContactInfo = ({
       <div className="border-bottom background__color-initial-gray u-margin-top">
         <h3 className="padding_lr-1">Address </h3>
       </div>
-      <div className="text-center u-margin-top ">
+      <div className="text-center">
         <p className="font__size-2">
           {address} / {city}
         </p>
