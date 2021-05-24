@@ -1,6 +1,7 @@
 import React from "react";
 
-const DashboardBox = ({ className, boxName }) => {
+const DashboardBox = ({ className, boxName, data }) => {
+  console.log(data);
   return (
     <div className="dashboard__box">
       <div>
