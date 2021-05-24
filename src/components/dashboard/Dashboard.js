@@ -1,36 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import DashboardSecOne from "./DashboardSecOne";
 import DashboardBox from "./DashboardBox";
 import { Container, Row, Col } from "react-bootstrap";
-import axios from "axios";
 
-import PropTypes from "prop-types";
-
-const Dashboard = ({ isAuthenticated }) => {
+const Dashboard = ({ user }) => {
+  console.log(user);
   return (
     <Container>
-      <Row>
-        <Col>
-          <DashboardBox />
-        </Col>
-        <Col>
-          <DashboardBox />
-        </Col>
-        <Col>
-          <DashboardBox />
-        </Col>
-      </Row>
+      <h1 className="u-margin-top-3">Welcome Home, {user.name}</h1>
+      <DashboardSecOne />
       <div></div>
       <div></div>
     </Container>
   );
 };
 
-Dashboard.propTypes = {};
-
 const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.auth.isAuthenticated
+    user: state.auth.user
   };
 };
 export default connect(mapStateToProps)(Dashboard);
