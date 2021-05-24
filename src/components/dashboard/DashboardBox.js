@@ -5,7 +5,9 @@ const DashboardBox = ({ className, boxName, data }) => {
   return (
     <div className="dashboard__box">
       <div>
-        <h2 className={`u-center-text font__size-4 ${className}`}>{boxName}</h2>
+        <h2 className={`u-center-text font__size-4 ${className} `}>
+          {boxName}
+        </h2>
       </div>
     </div>
   );

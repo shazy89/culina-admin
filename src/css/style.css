@@ -191,6 +191,9 @@ body {
 .text_color-brown {
   color: #9e2b2b; }
 
+.grey_bottom-border {
+  border-bottom: 1px solid rgba(151, 151, 151, 0.479); }
+
 .login {
   height: 93vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("./assets/images/LoginRestaurant.jpg");

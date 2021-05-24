@@ -11,10 +11,12 @@ const Dashboard = ({ user, companies, alert, loading }) => {
     if (!companies.length) {
       getCompanies();
     }
-  }, [getCompanies, companies]);
+  }, [companies]);
   return (
     <Container>
-      <h1 className="u-margin-top-3">Welcome Home, {user.name}</h1>
+      <h1 className="u-margin-top-3 grey_bottom-border padding--05 ">
+        Welcome Home, {user.name}
+      </h1>
       {alert && <Alert />}
       <DashboardSecOne />
       <div></div>
