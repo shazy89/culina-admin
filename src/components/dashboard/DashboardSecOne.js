@@ -23,7 +23,14 @@ const DashboardSection1 = ({ companies }) => {
           />
         </Col>
         <Col>
-          <DashboardBox boxName="Projects" data={companies} />
+          <DashboardBox
+            boxName="Projects"
+            className="text_color-darkgreen"
+            data={companies}
+          />
+        </Col>
+        <Col>
+          <DashboardBox boxName="Revenue 2021" data={companies} />
         </Col>
       </Row>
     </>

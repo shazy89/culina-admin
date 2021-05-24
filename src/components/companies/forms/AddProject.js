@@ -14,7 +14,6 @@ const AddProject = ({
       <div>
         <Back history={history} />
       </div>
-
       <h1 className="u-margin-top-3 text-center">New Project</h1>
       <ProjectFormFields id={id} history={history} edit={edit} />
     </>

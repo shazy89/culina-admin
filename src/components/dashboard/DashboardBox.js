@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DashboardBox = ({ className, boxName, data }) => {
-  console.log(data);
   return (
     <div className="dashboard__box">
       <div>
         <h2 className={`u-center-text font__size-4 ${className} `}>
           {boxName}
         </h2>
+        <h3 className={`u-center-text font__size-5`}>{data.length}</h3>
       </div>
     </div>
   );

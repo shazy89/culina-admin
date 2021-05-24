@@ -191,6 +191,9 @@ body {
 .text_color-brown {
   color: #9e2b2b; }
 
+.text_color-darkgreen {
+  color: #005500; }
+
 .grey_bottom-border {
   border-bottom: 1px solid rgba(151, 151, 151, 0.479); }
 
