@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FilePlus, FileText } from "react-feather";
+import { FilePlus, FileText, Layout } from "react-feather";
 import SideNavItem from "./SideNavItem";
 
 const SideNav = () => {
@@ -11,15 +11,22 @@ const SideNav = () => {
         <SideNavItem
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
+          icon={Layout}
+          content="Dashboard"
+          to="/dashboard"
+        />
+        <SideNavItem
+          selectedItem={selectedItem}
+          setSelectedItem={setSelectedItem}
           icon={FileText}
-          content="All Companies"
+          content="Clients"
           to="/companies"
         />
         <SideNavItem
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
           icon={FilePlus}
-          content="New Company"
+          content="New Clients"
           to="/company/new"
         />
       </ul>
