@@ -7,7 +7,7 @@ function dashboard(state = { initialState, loading: true }, action) {
 
   switch (type) {
     case DASHBOARD_DATA:
-      return (initialState = payload);
+      return { initialState: payload, loading: false };
     default:
       return state;
   }

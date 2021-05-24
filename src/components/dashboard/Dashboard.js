@@ -7,13 +7,23 @@ import { getCompanies } from "actions/companies";
 import { getDashboardInfo } from "actions/dashboardData";
 import Alert from "components/layout/Alerts";
 
-const Dashboard = ({ user, companies, alert, loading }) => {
+const Dashboard = ({
+  user,
+  companies,
+  alert,
+  loadingCompanies,
+  getDashboardInfo,
+  companyUsers,
+  revenue,
+  projects,
+  getCompanies
+}) => {
   useEffect(() => {
-    if (!companies.length) {
-      getCompanies();
-    }
-  }, [companies]);
-  return (
+    getCompanies();
+  }, []);
+  return loadingCompanies ? (
+    "LOADING"
+  ) : (
     <Container>
       <h1 className="u-margin-top-3 grey_bottom-border padding--05 ">
         Welcome Home, {user.name}
@@ -29,9 +39,14 @@ const Dashboard = ({ user, companies, alert, loading }) => {
 const mapStateToProps = (state) => {
   return {
     user: state.auth.user,
-    loading: state.company.loading,
+    loadingCompanies: state.company.loading,
     alert: state.alert,
-    companies: state.company.companies
+    companies: state.company.companies,
+    projects: state.dashboard.projects,
+    companyUsers: state.dashboard.companyUsers,
+    revenue: state.dashboard.revenue
   };
 };
-export default connect(mapStateToProps, { getCompanies })(Dashboard);
+export default connect(mapStateToProps, { getCompanies, getDashboardInfo })(
+  Dashboard
+);
