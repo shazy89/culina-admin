@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FilePlus, FileText, Layout } from "react-feather";
+import { FilePlus, FileText, Layout, Server } from "react-feather";
 import SideNavItem from "./SideNavItem";
 
 const SideNav = () => {
@@ -28,6 +28,13 @@ const SideNav = () => {
           icon={FilePlus}
           content="New Clients"
           to="/company/new"
+        />
+        <SideNavItem
+          selectedItem={selectedItem}
+          setSelectedItem={setSelectedItem}
+          icon={Server}
+          content="Admin Users"
+          to="/adminusers"
         />
       </ul>
     </div>

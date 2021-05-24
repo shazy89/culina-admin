@@ -14,6 +14,7 @@ import EditUser from "components/companies/companyUsers/EditUser";
 import AddProject from "../companies/forms/AddProject";
 import CompanyProject from "components/companies/project/CompanyProject";
 import EditProject from "components/companies/project/EditProject";
+import AdminUsers from "components/admins/AdminUsers";
 
 const Routes = () => {
   return (
@@ -26,6 +27,7 @@ const Routes = () => {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/company/new" component={CompanyForm} />
             <PrivateRoute exact path="/companies" component={AllCompanies} />
+            <PrivateRoute exact path="/adminusers" component={AdminUsers} />
             <PrivateRoute
               exact
               path="/companies/:id/user/:userId"
