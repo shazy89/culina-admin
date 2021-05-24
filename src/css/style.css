@@ -310,6 +310,13 @@ body {
   display: flex;
   flex-direction: row-reverse; }
 
+.dashboard__box {
+  height: 17rem;
+  width: 17rem;
+  padding: .8rem;
+  margin: 0 auto;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.199), 0px 1px 1px 0px rgba(0, 0, 0, 0.137), 0px 1px 3px 0px rgba(0, 0, 0, 0.116); }
+
 .culina__content {
   background-color: white;
   max-width: 150rem;
