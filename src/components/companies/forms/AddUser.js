@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import "react-datepicker/dist/react-datepicker.css";
 import Back from "components/reusable/Back";
 import AddUserFormFields from "./UserFormFields";
@@ -11,7 +12,8 @@ const AddUser = ({
   location: {
     state: { companyName }
   },
-  history
+  history,
+  alerts
 }) => {
   let edit = false;
   return (
@@ -19,10 +21,14 @@ const AddUser = ({
       <div>
         <Back history={history} />
       </div>
+      {alerts && <Alert />}
       <h1 className="u-margin-top-3 text-center">New {companyName} user</h1>
       <AddUserFormFields id={id} history={history} edit={edit} />
     </>
   );
 };
+const mapStateProps = (state) => ({
+  alerts: state.alert
+});
 
-export default AddUser;
+export default connect(mapStateProps)(AddUser);

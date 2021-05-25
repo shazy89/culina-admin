@@ -23,6 +23,7 @@ export const newCompanyUser = (formData, edit, history) => async (dispatch) => {
       dispatch(setAlert("Sucsess", "success"));
     }
     if (!edit) {
+      debugger;
       const res = await api.post(
         `/culina/${formData.company}/newuser`,
         formData
@@ -36,7 +37,6 @@ export const newCompanyUser = (formData, edit, history) => async (dispatch) => {
       dispatch(setAlert("Sucsess", "success"));
     }
   } catch (err) {
-    debugger;
     if (err) {
       dispatch(setAlert("Please try again", "danger"));
     }
