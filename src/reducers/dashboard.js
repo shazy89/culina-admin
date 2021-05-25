@@ -1,13 +1,12 @@
 import { DASHBOARD_DATA } from "actions/types";
 
-let initialState;
-
-function dashboard(state = { initialState, loading: true }, action) {
+function dashboard(state = { data: "", loading: true }, action) {
   const { type, payload } = action;
 
   switch (type) {
     case DASHBOARD_DATA:
-      return { initialState: payload, loading: false };
+      console.log(payload);
+      return { ...state, data: payload, loading: false };
     default:
       return state;
   }

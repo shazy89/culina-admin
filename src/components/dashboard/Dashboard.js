@@ -15,11 +15,17 @@ const Dashboard = ({
   loadingCompanies,
   getDashboardInfo,
   getCompanies,
-  dashboardData
+  dashboardData,
+  loadingInfo
 }) => {
   useEffect(() => {
-    getCompanies();
-  }, []);
+    if (!companies.length) {
+      getCompanies();
+    }
+    if (!dashboardData) {
+      getDashboardInfo();
+    }
+  }, [companies.length]);
 
   return loadingCompanies ? (
     <Spinner />
@@ -29,9 +35,11 @@ const Dashboard = ({
         Welcome Home, {user.name}
       </h1>
       {alert && <Alert />}
-      {
-        //  <DashboardSecOne companies={companies} dashboardData={dashboardData} />
-      }
+      {loadingInfo ? (
+        <Spinner />
+      ) : (
+        <DashboardSecOne companies={companies} dashboardData={dashboardData} />
+      )}
       <div></div>
       <div></div>
     </Container>
@@ -44,7 +52,10 @@ const mapStateToProps = (state) => {
     loadingCompanies: state.company.loading,
     alert: state.alert,
     companies: state.company.companies,
-    dashboardData: state.dashboard.initialState
+    dashboardData: state.dashboard.data,
+    loadingInfo: state.dashboard.loading
   };
 };
-export default connect(mapStateToProps, { getCompanies })(Dashboard);
+export default connect(mapStateToProps, { getCompanies, getDashboardInfo })(
+  Dashboard
+);

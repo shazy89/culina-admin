@@ -4,6 +4,7 @@ import DashboardBox from "./DashboardBox";
 import { Row, Col } from "react-bootstrap";
 
 const DashboardSection1 = ({ companies, dashboardData }) => {
+  console.log();
   return (
     <>
       {" "}
@@ -12,7 +13,7 @@ const DashboardSection1 = ({ companies, dashboardData }) => {
           <DashboardBox
             boxName="Clients"
             className="text_color-teal"
-            data={companies}
+            data={companies.length}
           />
         </Col>
         <Col>

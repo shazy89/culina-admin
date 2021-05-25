@@ -9,11 +9,7 @@ const DashboardBox = ({ className, boxName, data }) => {
           {boxName}
         </h2>
 
-        {boxName === "Clients" ? (
-          <h3 className={`u-center-text font__size-5`}>{data}</h3>
-        ) : (
-          <h3 className={`u-center-text font__size-5`}>{data.length}</h3>
-        )}
+        <h3 className={`u-center-text font__size-5`}>{data}</h3>
       </div>
     </div>
   );
