@@ -2,18 +2,18 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: ["3+", "5+", "10+"],
   datasets: [
     {
       label: "# of Votes",
-      data: [12, 19, 3, 5, 2, 3],
+      data: [12, 19, 4],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)"
+        "rgba(255, 99, 132, 0.6)",
+        "rgba(54, 162, 235, 0.6)",
+        "rgba(255, 206, 86, 0.6)",
+        "rgba(75, 192, 192, 0.6)",
+        "rgba(153, 102, 255, 0.6)",
+        "rgba(255, 159, 64, 0.6)"
       ],
       borderColor: [
         "rgba(255, 99, 132, 1)",
@@ -27,13 +27,12 @@ const data = {
     }
   ]
 };
-var options = {
+const options = {
   plugins: {
     legend: {
       labels: {
-        // This more specific font property overrides the global property
         font: {
-          size: 50
+          size: 70
         }
       }
     }
@@ -42,15 +41,9 @@ var options = {
 
 const DoughnutChart = () => (
   <>
-    <div className="header">
-      <h1 className="title">Doughnut Chart</h1>
+    <div className="header u-margin-top-small u-center-text">
       <div className="links">
-        <a
-          className="btn btn-gh"
-          href="https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/Doughnut.js"
-        >
-          Github Source
-        </a>
+        <h4>Employees </h4>
       </div>
     </div>
     <Doughnut
