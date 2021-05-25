@@ -9,7 +9,7 @@ const DashboardBox = ({ className, boxName, data }) => {
           {boxName}
         </h2>
 
-        <h3 className={`u-center-text font__size-5`}>{data}</h3>
+        <h3 className={`u-center-text font__size-5 u-margin-top-3`}>{data}</h3>
       </div>
     </div>
   );
