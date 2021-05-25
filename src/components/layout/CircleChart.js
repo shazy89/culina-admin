@@ -23,7 +23,8 @@ const data = {
         "rgba(153, 102, 255, 1)",
         "rgba(255, 159, 64, 1)"
       ],
-      borderWidth: 1
+      borderWidth: 1,
+      responsive: true
     }
   ]
 };
@@ -32,7 +33,7 @@ const options = {
     legend: {
       labels: {
         font: {
-          size: 70
+          size: 10
         }
       }
     }
@@ -47,10 +48,10 @@ const DoughnutChart = () => (
       </div>
     </div>
     <Doughnut
-      className="pie_chart"
+      className="pie_chart "
       data={data}
-      width={200}
-      height={200}
+      width={150}
+      height={150}
       options={options}
     />
   </>

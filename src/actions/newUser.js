@@ -36,6 +36,7 @@ export const newCompanyUser = (formData, edit, history) => async (dispatch) => {
       dispatch(setAlert("Sucsess", "success"));
     }
   } catch (err) {
+    debugger;
     if (err) {
       dispatch(setAlert("Please try again", "danger"));
     }

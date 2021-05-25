@@ -339,8 +339,9 @@ body {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.199), 0px 1px 1px 0px rgba(0, 0, 0, 0.137), 0px 1px 3px 0px rgba(0, 0, 0, 0.116); }
 
 .pie_chart {
-  width: 20rem !important;
-  height: 20rem !important; }
+  width: 15rem !important;
+  height: 15rem !important;
+  margin: 0 auto; }
 
 .culina__content {
   background-color: white;

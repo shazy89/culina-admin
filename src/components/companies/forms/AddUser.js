@@ -2,6 +2,7 @@ import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import Back from "components/reusable/Back";
 import AddUserFormFields from "./UserFormFields";
+import Alert from "components/layout/Alerts";
 
 const AddUser = ({
   match: {

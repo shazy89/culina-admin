@@ -30,11 +30,9 @@ const data = {
 
 const options = {
   indexAxis: "y",
-  // Elements options apply to all of the options unless overridden in a dataset
-  // In this case, we are setting the border of each horizontal bar to be 2px wide
   elements: {
     bar: {
-      borderWidth: 2
+      borderWidth: 1
     }
   },
   responsive: true,
@@ -51,16 +49,8 @@ const options = {
 
 const HorizontalBarChart = () => (
   <>
-    <div className="header">
-      <h1 className="title">Horizontal Bar Chart</h1>
-      <div className="links">
-        <a
-          className="btn btn-gh"
-          href="https://github.com/reactchartjs/react-chartjs-2/blob/master/example/src/charts/HorizontalBar.js"
-        >
-          Github Source
-        </a>
-      </div>
+    <div className="header u-margin-top-small">
+      <h1 className="title"></h1>
     </div>
     <Bar data={data} options={options} />
   </>
