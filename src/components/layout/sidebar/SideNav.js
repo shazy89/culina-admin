@@ -26,7 +26,7 @@ const SideNav = () => {
           selectedItem={selectedItem}
           setSelectedItem={setSelectedItem}
           icon={FilePlus}
-          content="New Clients"
+          content="Add New Clients"
           to="/company/new"
         />
         <SideNavItem
