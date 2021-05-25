@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import DashboardBox from "./DashboardBox";
 import { Row, Col } from "react-bootstrap";
 
-const DashboardSection1 = ({ companies }) => {
+const DashboardSection1 = ({ companies, dashboardData }) => {
   return (
     <>
       {" "}
@@ -19,18 +19,18 @@ const DashboardSection1 = ({ companies }) => {
           <DashboardBox
             boxName="Users"
             className="text_color-brown"
-            data={companies}
+            data={dashboardData.companyUsers}
           />
         </Col>
         <Col>
           <DashboardBox
             boxName="Projects"
             className="text_color-darkgreen"
-            data={companies}
+            data={dashboardData.projects}
           />
         </Col>
         <Col>
-          <DashboardBox boxName="Revenue 2021" data={companies} />
+          <DashboardBox boxName="Revenue 2021" data={dashboardData.revenue} />
         </Col>
       </Row>
     </>

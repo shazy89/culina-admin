@@ -6,6 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { getCompanies } from "actions/companies";
 import { getDashboardInfo } from "actions/dashboardData";
 import Alert from "components/layout/Alerts";
+import Spinner from "components/layout/Spinner";
 
 const Dashboard = ({
   user,
@@ -13,23 +14,24 @@ const Dashboard = ({
   alert,
   loadingCompanies,
   getDashboardInfo,
-  companyUsers,
-  revenue,
-  projects,
-  getCompanies
+  getCompanies,
+  dashboardData
 }) => {
   useEffect(() => {
     getCompanies();
   }, []);
+
   return loadingCompanies ? (
-    "LOADING"
+    <Spinner />
   ) : (
     <Container>
       <h1 className="u-margin-top-3 grey_bottom-border padding--05 ">
         Welcome Home, {user.name}
       </h1>
       {alert && <Alert />}
-      <DashboardSecOne companies={companies} />
+      {
+        //  <DashboardSecOne companies={companies} dashboardData={dashboardData} />
+      }
       <div></div>
       <div></div>
     </Container>
@@ -42,11 +44,7 @@ const mapStateToProps = (state) => {
     loadingCompanies: state.company.loading,
     alert: state.alert,
     companies: state.company.companies,
-    projects: state.dashboard.projects,
-    companyUsers: state.dashboard.companyUsers,
-    revenue: state.dashboard.revenue
+    dashboardData: state.dashboard.initialState
   };
 };
-export default connect(mapStateToProps, { getCompanies, getDashboardInfo })(
-  Dashboard
-);
+export default connect(mapStateToProps, { getCompanies })(Dashboard);
