@@ -23,7 +23,6 @@ export const newCompanyUser = (formData, edit, history) => async (dispatch) => {
       dispatch(setAlert("Sucsess", "success"));
     }
     if (!edit) {
-      debugger;
       const res = await api.post(
         `/culina/${formData.company}/newuser`,
         formData

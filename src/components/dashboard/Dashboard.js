@@ -41,7 +41,7 @@ const Dashboard = ({
         <DashboardSecOne companies={companies} dashboardData={dashboardData} />
       )}
 
-      <DashboardCharts />
+      <DashboardCharts companies={companies} />
     </Container>
   );
 };
