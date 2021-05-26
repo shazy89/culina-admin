@@ -43,7 +43,7 @@ const DoughnutChart = ({ chartData, labels, title }) => {
   };
   return (
     <>
-      <div className="header  u-center-text">
+      <div className="header  u-center-text u-margin-top-1">
         <div className="links">
           <h4>{title}</h4>
         </div>
