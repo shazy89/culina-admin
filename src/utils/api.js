@@ -2,7 +2,7 @@ import axios from "axios";
 // import store from "../store";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/", //  "https://client-api1.herokuapp.com/", http://localhost:5000/
+  baseURL: "https://client-api1.herokuapp.com/", //  "https://client-api1.herokuapp.com/", http://localhost:5000/
   headers: {
     "Content-Type": "application/json"
   }
