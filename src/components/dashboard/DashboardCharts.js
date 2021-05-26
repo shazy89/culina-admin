@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import HorizontalChart from "components/layout/HorizontalBarChart";
+import HorizontalChart from "components/layout/VerticalChartBar";
 import CircleChart from "components/layout/CircleChart";
 import { Row, Col } from "react-bootstrap";
 import { chartDataEmployees } from "./handleData";
 const DashboardCharts = ({ companies }) => {
-  const [employees, setEmployees] = useState("");
-
   return (
     <Row>
       <Col>
         <HorizontalChart />
       </Col>
       <Col>
-        <CircleChart dataEmployees={chartDataEmployees(companies)} />
-        <CircleChart dataEmployees={chartDataEmployees(companies)} />
+        <CircleChart
+          chartData={chartDataEmployees(companies)}
+          labels={["<2", "3-4", "4+"]}
+          title="Employees"
+        />
+        <CircleChart
+          chartData={chartDataEmployees(companies)}
+          labels={["erdo", "semra", "turan"]}
+          title="Employees"
+        />
       </Col>
     </Row>
   );

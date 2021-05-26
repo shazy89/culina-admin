@@ -6,21 +6,20 @@ const options = {
     legend: {
       labels: {
         font: {
-          size: 10
+          size: 7
         }
       }
     }
   }
 };
 
-const DoughnutChart = ({ dataEmployees }) => {
-  console.log(dataEmployees);
+const DoughnutChart = ({ chartData, labels, title }) => {
   const data = {
-    labels: ["2", "4+", "6+"],
+    labels: labels,
     datasets: [
       {
         label: "# of Votes",
-        data: dataEmployees,
+        data: chartData,
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
@@ -44,13 +43,13 @@ const DoughnutChart = ({ dataEmployees }) => {
   };
   return (
     <>
-      <div className="header u-margin-top-small u-center-text">
+      <div className="header  u-center-text">
         <div className="links">
-          <h4>Employees </h4>
+          <h4>{title}</h4>
         </div>
       </div>
       <Doughnut
-        className="pie_chart "
+        className="pie_chart"
         data={data}
         width={150}
         height={150}

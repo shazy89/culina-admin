@@ -1,6 +1,6 @@
 .dashboard {
     &__box {
-        height: 18rem;
+        height: 15rem;
         width: 20rem;
 
         padding: .8rem;
@@ -9,7 +9,11 @@
     }
 }
 .pie_chart {
-    width: 15rem !important;
-    height: 15rem !important;
+    width: 18rem !important;
+    height: 18rem !important;
     margin: 0 auto;
+}
+.vertical_chart {
+    width: 50rem !important;
+    height: 30rem !important;
 }

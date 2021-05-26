@@ -2,17 +2,33 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 
 const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
   datasets: [
     {
       label: "# of Votes",
-      data: [12, 19, 3, 5, 2, 3],
+      data: [12, 19, 3, 5, 2, 3, 2, 3, 4, 1, 1, 2],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
         "rgba(54, 162, 235, 0.2)",
         "rgba(255, 206, 86, 0.2)",
         "rgba(75, 192, 192, 0.2)",
         "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
         "rgba(255, 159, 64, 0.2)"
       ],
       borderColor: [
@@ -29,10 +45,10 @@ const data = {
 };
 
 const options = {
-  indexAxis: "y",
+  indexAxis: "x",
   elements: {
     bar: {
-      borderWidth: 1
+      borderWidth: 2
     }
   },
   responsive: true,
@@ -47,13 +63,19 @@ const options = {
   }
 };
 
-const HorizontalBarChart = () => (
+const VerticalChartBar = () => (
   <>
     <div className="header u-margin-top-small">
       <h1 className="title"></h1>
     </div>
-    <Bar data={data} options={options} />
+    <Bar
+      className="vertical_chart"
+      data={data}
+      width={600}
+      height={350}
+      options={options}
+    />
   </>
 );
 
-export default HorizontalBarChart;
+export default VerticalChartBar;
