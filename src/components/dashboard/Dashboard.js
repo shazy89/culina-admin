@@ -7,6 +7,7 @@ import { getDashboardInfo } from "actions/dashboardData";
 import Alert from "components/layout/Alerts";
 import Spinner from "components/layout/Spinner";
 import DashboardCharts from "./DashboardCharts";
+import { byDate } from "./handleData";
 
 const Dashboard = ({
   user,
@@ -26,7 +27,7 @@ const Dashboard = ({
       getDashboardInfo();
     }
   }, [companies.length]);
-
+  console.log(byDate(companies));
   return loadingCompanies ? (
     <Spinner />
   ) : (
