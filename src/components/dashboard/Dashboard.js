@@ -33,7 +33,7 @@ const Dashboard = ({
   ) : (
     <Container>
       <h1 className="u-margin-top-3 grey_bottom-border padding--05 ">
-        Welcome Home, {!loadingInfo ? user.name : ""}
+        Welcome Home, {user && user.name}
       </h1>
       {alert && <Alert />}
       {loadingInfo ? (
