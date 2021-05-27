@@ -27,13 +27,13 @@ const Dashboard = ({
       getDashboardInfo();
     }
   }, [companies.length]);
-  console.log(byDate(companies));
+
   return loadingCompanies ? (
     <Spinner />
   ) : (
     <Container>
       <h1 className="u-margin-top-3 grey_bottom-border padding--05 ">
-        Welcome Home, {user.name}
+        Welcome Home, {!loadingInfo ? user.name : ""}
       </h1>
       {alert && <Alert />}
       {loadingInfo ? (
