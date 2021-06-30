@@ -7,5 +7,9 @@
 
  -webkit-clip-path: polygon(0 0, 100% 20%, 100% 89%, 0% 100%);
  clip-path: polygon(0 0, 100% 20%, 100% 89%, 0% 100%);
-
+ &_credentials {
+     background-color: $color-light-grey;
+     text-align: center;
+     padding: 1rem;
+ }
 }

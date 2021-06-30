@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import DashboardSecOne from "./DashboardSecOne";
 import { Container } from "react-bootstrap";
@@ -27,7 +27,7 @@ const Dashboard = ({
       getDashboardInfo();
     }
   }, [companies.length]);
-
+  console.log(companies);
   return loadingCompanies ? (
     <Spinner />
   ) : (

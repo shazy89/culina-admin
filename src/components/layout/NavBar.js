@@ -6,7 +6,7 @@ import { logout } from "../../actions/auth";
 import PropTypes from "prop-types";
 import SI from "../PleaseSignin";
 
-const NavBar = ({ logout, history, currentUser, isAuthenticated, loading }) => {
+const NavBar = ({ logout, currentUser, isAuthenticated }) => {
   if (!isAuthenticated) {
     return <SI />;
   }

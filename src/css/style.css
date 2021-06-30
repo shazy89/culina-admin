@@ -27,9 +27,6 @@ body {
 .company__paragraph-text {
   font-size: 140% !important; }
 
-.text-center {
-  text-align: center; }
-
 .font__size-1 {
   font-size: 1rem !important; }
 
@@ -205,6 +202,10 @@ body {
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 20%, 100% 89%, 0% 100%);
   clip-path: polygon(0 0, 100% 20%, 100% 89%, 0% 100%); }
+  .login_credentials {
+    background-color: #e2e2e2;
+    text-align: center;
+    padding: 1rem; }
 
 .culina__spinner {
   position: relative;

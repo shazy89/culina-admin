@@ -7,6 +7,7 @@ import { login } from "../../actions/auth";
 import Alert from "../layout/Alerts";
 
 const LoginDev = ({ login, isAuthenticated, alerts }) => {
+  const [serverDelay, setServerDelay] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -33,6 +34,12 @@ const LoginDev = ({ login, isAuthenticated, alerts }) => {
         </div>
         <div className="u-margin-top-big">
           {alerts && <Alert />}
+          <div className="login_credentials">
+            <h3>Use the credentials below to login</h3>
+            <h4>Email: guest@gmail.com</h4>
+            <h4>Password: 123123</h4>
+          </div>
+
           <form className="culina__auth--form" onSubmit={onSubmit}>
             <div className="culina__auth--form-group">
               <label
