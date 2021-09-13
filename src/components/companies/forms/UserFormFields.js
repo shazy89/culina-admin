@@ -1,19 +1,26 @@
-import React from "react";
-import { Formik } from "formik";
-import { connect } from "react-redux";
-import { Form, Col, Button } from "react-bootstrap";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { positions } from "./constants";
-import { newCompanyUser } from "actions/newUser";
-import { newUserSchema, editUserSchema } from "./constants";
+import React, { useMemo } from 'react';
+import { Formik } from 'formik';
+import { connect } from 'react-redux';
+import { Form, Col, Button } from 'react-bootstrap';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { positions } from './constants';
+import { newCompanyUser } from 'actions/newUser';
+import { newUserSchema, editUserSchema } from './constants';
 const AddUserFormFields = ({
   id,
   edit,
   history,
   profileInfo,
-  newCompanyUser
+  newCompanyUser,
 }) => {
+  const memoizedPositions = useMemo(
+    () =>
+      positions.map((position, index) => (
+        <option key={index}>{position}</option>
+      )),
+    []
+  );
   return (
     <Formik
       initialValues={
@@ -25,33 +32,33 @@ const AddUserFormFields = ({
               firstName: profileInfo.firstName,
               lastName: profileInfo.lastName,
               avatar:
-                "culina/depositphotos_59095205-stock-illustration-businessman-profile-icon_yytrhn.jpg",
+                'culina/depositphotos_59095205-stock-illustration-businessman-profile-icon_yytrhn.jpg',
               annualSalary: profileInfo.annualSalary,
               position: profileInfo.position,
               state: profileInfo.state,
               city: profileInfo.city,
               address: profileInfo.address,
-              country: "United States",
+              country: 'United States',
               birthday: new Date(profileInfo.birthday),
-              zipCode: profileInfo.zipCode
+              zipCode: profileInfo.zipCode,
             }
           : {
               company: id,
-              email: "",
-              password: "",
-              firstName: "",
-              lastName: "",
+              email: '',
+              password: '',
+              firstName: '',
+              lastName: '',
               avatar:
-                "culina/depositphotos_59095205-stock-illustration-businessman-profile-icon_yytrhn.jpg",
-              annualSalary: "",
-              hrRate: "",
-              position: "",
-              state: "",
-              city: "",
-              address: "",
-              country: "United States",
-              birthday: "",
-              zipCode: ""
+                'culina/depositphotos_59095205-stock-illustration-businessman-profile-icon_yytrhn.jpg',
+              annualSalary: '',
+              hrRate: '',
+              position: '',
+              state: '',
+              city: '',
+              address: '',
+              country: 'United States',
+              birthday: '',
+              zipCode: '',
             }
       }
       validationSchema={profileInfo ? editUserSchema : newUserSchema}
@@ -67,7 +74,7 @@ const AddUserFormFields = ({
         touched,
         values,
         setFieldValue,
-        handleChange
+        handleChange,
       }) => {
         return (
           <Form className="u-margin-top-big" onSubmit={handleSubmit}>
@@ -84,8 +91,8 @@ const AddUserFormFields = ({
                 />
                 {errors.firstName ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.firstName}{" "}
+                    {' '}
+                    {errors.firstName}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -104,8 +111,8 @@ const AddUserFormFields = ({
 
                 {errors.lastName ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.lastName}{" "}
+                    {' '}
+                    {errors.lastName}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -120,13 +127,13 @@ const AddUserFormFields = ({
                     dateFormat="MMMM d, yyyy"
                     className="form-control font__size-2"
                     name="birthday"
-                    onChange={(date) => setFieldValue("birthday", date)}
+                    onChange={(date) => setFieldValue('birthday', date)}
                   />
                 </div>
                 {errors.birthday ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.birthday}{" "}
+                    {' '}
+                    {errors.birthday}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -144,14 +151,12 @@ const AddUserFormFields = ({
                   as="select"
                   custom
                 >
-                  {positions.map((position, index) => (
-                    <option key={index}>{position}</option>
-                  ))}
+                  {memoizedPositions}
                 </Form.Control>
                 {errors.position ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.position}{" "}
+                    {' '}
+                    {errors.position}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -170,8 +175,8 @@ const AddUserFormFields = ({
                 />
                 {errors.email ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.email}{" "}
+                    {' '}
+                    {errors.email}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -192,8 +197,8 @@ const AddUserFormFields = ({
 
                   {errors.password ? (
                     <p className="font__size-1 form_input-danger">
-                      {" "}
-                      {errors.password}{" "}
+                      {' '}
+                      {errors.password}{' '}
                     </p>
                   ) : (
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -214,8 +219,8 @@ const AddUserFormFields = ({
                 />
                 {errors.annualSalary ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.annualSalary}{" "}
+                    {' '}
+                    {errors.annualSalary}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -235,8 +240,8 @@ const AddUserFormFields = ({
                 />
                 {errors.address ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.address}{" "}
+                    {' '}
+                    {errors.address}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -254,13 +259,13 @@ const AddUserFormFields = ({
                 />
                 {errors.city ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.city}{" "}
+                    {' '}
+                    {errors.city}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 )}
-              </Form.Group>{" "}
+              </Form.Group>{' '}
               <Form.Group as={Col} md="2" controlId="state">
                 <Form.Label className="font__size-2">State</Form.Label>
                 <Form.Control
@@ -273,8 +278,8 @@ const AddUserFormFields = ({
                 />
                 {errors.state ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.state}{" "}
+                    {' '}
+                    {errors.state}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -292,8 +297,8 @@ const AddUserFormFields = ({
                 />
                 {errors.zipCode ? (
                   <p className="font__size-1 form_input-danger">
-                    {" "}
-                    {errors.zipCode}{" "}
+                    {' '}
+                    {errors.zipCode}{' '}
                   </p>
                 ) : (
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>

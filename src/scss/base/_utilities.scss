@@ -96,3 +96,15 @@
     padding: 0 2rem;
   }
 }
+
+.position {
+  &_start {
+    justify-content: flex-start;
+  }
+  &_center {
+    justify-content: center;
+  }
+  &_end {
+    justify-content: flex-end;
+  }
+}

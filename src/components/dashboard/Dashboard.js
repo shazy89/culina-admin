@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import DashboardSecOne from "./DashboardSecOne";
-import { Container } from "react-bootstrap";
-import { getCompanies } from "actions/companies";
-import { getDashboardInfo } from "actions/dashboardData";
-import Alert from "components/layout/Alerts";
-import Spinner from "components/layout/Spinner";
-import DashboardCharts from "./DashboardCharts";
-import { byDate } from "./handleData";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import DashboardSecOne from './DashboardSecOne';
+import { Container } from 'react-bootstrap';
+import { getCompanies } from 'actions/companies';
+import { getDashboardInfo } from 'actions/dashboardData';
+import Alert from 'components/layout/Alerts';
+import Spinner from 'components/layout/Spinner';
+import DashboardCharts from './DashboardCharts';
+import { byDate } from './handleData';
 
 const Dashboard = ({
   user,
@@ -17,7 +17,7 @@ const Dashboard = ({
   getDashboardInfo,
   getCompanies,
   dashboardData,
-  loadingInfo
+  loadingInfo,
 }) => {
   useEffect(() => {
     if (!companies.length) {
@@ -26,7 +26,7 @@ const Dashboard = ({
     if (!dashboardData) {
       getDashboardInfo();
     }
-  }, [companies.length]);
+  }, [companies.length, dashboardData, getCompanies, getDashboardInfo]);
   console.log(companies);
   return loadingCompanies ? (
     <Spinner />
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
     alert: state.alert,
     companies: state.company.companies,
     dashboardData: state.dashboard.data,
-    loadingInfo: state.dashboard.loading
+    loadingInfo: state.dashboard.loading,
   };
 };
 export default connect(mapStateToProps, { getCompanies, getDashboardInfo })(

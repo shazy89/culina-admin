@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { Button } from "react-bootstrap";
-import { login } from "../../actions/auth";
-import Alert from "../layout/Alerts";
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import { login } from '../../actions/auth';
+import Alert from '../layout/Alerts';
 
 const LoginDev = ({ login, isAuthenticated, alerts }) => {
-  const [serverDelay, setServerDelay] = useState(false);
+  //const [serverDelay, setServerDelay] = useState(false);
   const [formData, setFormData] = useState({
-    email: "",
-    password: ""
+    email: '',
+    password: '',
   });
 
   const { email, password } = formData;
@@ -89,12 +89,12 @@ const LoginDev = ({ login, isAuthenticated, alerts }) => {
 
 LoginDev.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
 };
 const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
-    alerts: state.alert
+    alerts: state.alert,
   };
 };
 

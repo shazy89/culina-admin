@@ -126,6 +126,15 @@ body {
 .padding_lr-2 {
   padding: 0 2rem; }
 
+.position_start {
+  justify-content: flex-start; }
+
+.position_center {
+  justify-content: center; }
+
+.position_end {
+  justify-content: flex-end; }
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;

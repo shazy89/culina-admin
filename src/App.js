@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginDev from './components/auth/LoginDev';
 import Routes from './components/routes/routes';
 import { loadUser, logout } from './actions/auth';
-import './scss/main.scss';
+
 const App = ({ loadUser, logout }) => {
   useEffect(() => {
     if (localStorage.token) {
