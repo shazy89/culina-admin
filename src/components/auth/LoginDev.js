@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { login } from '../../actions/auth';
 import Alert from '../layout/Alerts';
-
-const LoginDev = ({ login, isAuthenticated, alerts }) => {
+import Spinner from '../layout/Spinner';
+const LoginDev = ({ login, isAuthenticated, alerts, loading }) => {
   //const [serverDelay, setServerDelay] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -22,7 +22,9 @@ const LoginDev = ({ login, isAuthenticated, alerts }) => {
     e.preventDefault();
     login(email, password);
   };
-
+  if (loading) {
+    return <Spinner />;
+  }
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
@@ -95,6 +97,7 @@ const mapStateToProps = (state) => {
   return {
     isAuthenticated: state.auth.isAuthenticated,
     alerts: state.alert,
+    loading: state.auth.loading,
   };
 };
 
