@@ -1,8 +1,8 @@
-import React from "react";
-import { Card, Button } from "react-bootstrap";
+import React from 'react';
+import { Card } from 'react-bootstrap';
 
 const UserAdress = ({
-  profileInfo: { address, city, country, state, birthday }
+  profileInfo: { address, city, country, state, birthday },
 }) => {
   return (
     <Card className="user__personal user__shadow u-margin-top-small">
