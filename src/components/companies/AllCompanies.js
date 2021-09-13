@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getCompanies } from "../../actions/companies";
-import Spinner from "../layout/Spinner";
-import CompanyCard from "./CompanyInfoCard";
-import Alert from "../layout/Alerts";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getCompanies } from '../../actions/companies';
+import Spinner from '../layout/Spinner';
+import CompanyCard from './CompanyInfoCard';
+import Alert from '../layout/Alerts';
 
 const AllCompanies = ({ companies, getCompanies, loading, alert }) => {
   const displayCompanies = companies.map((company) => (
@@ -15,7 +15,7 @@ const AllCompanies = ({ companies, getCompanies, loading, alert }) => {
     if (!companies.length) {
       getCompanies();
     }
-  }, [companies.length]);
+  }, [companies.length, getCompanies]);
 
   return (
     <>
@@ -33,14 +33,14 @@ const AllCompanies = ({ companies, getCompanies, loading, alert }) => {
 
 AllCompanies.propTypes = {
   companies: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
     companies: state.company.companies,
     loading: state.company.loading,
-    alert: state.alert
+    alert: state.alert,
   };
 };
 

@@ -29,7 +29,6 @@ const ProjectsTable = ({ projects, companyId }) => {
       )),
     []
   );
-  //
 
   return (
     <div className="projects__table">
