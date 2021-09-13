@@ -1,6 +1,6 @@
-import React from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
-import { ChevronDown } from "react-feather";
+import React from 'react';
+import { Accordion, Card, Button } from 'react-bootstrap';
+import { ChevronDown } from 'react-feather';
 
 const ProjectAbout = ({ projectInfo: { description, notes } }) => {
   return (

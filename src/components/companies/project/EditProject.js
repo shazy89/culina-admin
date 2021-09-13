@@ -1,24 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import Back from "components/reusable/Back";
-import ProjectFormFields from "../forms/ProjectFormFields";
-import Alert from "components/layout/Alerts";
+import React from 'react';
+import { connect } from 'react-redux';
+import Back from 'components/reusable/Back';
+import ProjectFormFields from '../forms/ProjectFormFields';
+import Alert from 'components/layout/Alerts';
 const EditProject = ({
   history,
   alerts,
   match: {
-    params: { id, projectName }
+    params: { id, projectName },
   },
   location: {
-    state: { projectInfo }
-  }
+    state: { projectInfo },
+  },
 }) => {
   const edit = true;
   return (
     <>
-      <div>
-        <Back history={history} />
-      </div>
+      <Back history={history} />
       {alerts && <Alert />}
       <h2 className="text-center">Edit {projectName}</h2>
       <ProjectFormFields
@@ -31,6 +29,6 @@ const EditProject = ({
   );
 };
 const mapStateProps = (state) => ({
-  alerts: state.alert
+  alerts: state.alert,
 });
 export default connect(mapStateProps)(EditProject);

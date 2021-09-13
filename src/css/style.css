@@ -454,7 +454,9 @@ body {
 .flex__container {
   display: flex;
   /* justify-content: space-between; */
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 95%; }
 
 .user__personal {
   width: 100%; }

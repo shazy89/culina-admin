@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCompanies } from '../../actions/companies';
@@ -7,9 +7,13 @@ import CompanyCard from './CompanyInfoCard';
 import Alert from '../layout/Alerts';
 
 const AllCompanies = ({ companies, getCompanies, loading, alert }) => {
-  const displayCompanies = companies.map((company) => (
-    <CompanyCard key={company._id} company={company} />
-  ));
+  const displayCompanies = useMemo(
+    () =>
+      companies.map((company) => (
+        <CompanyCard key={company._id} company={company} />
+      )),
+    [companies]
+  );
 
   useEffect(() => {
     if (!companies.length) {
