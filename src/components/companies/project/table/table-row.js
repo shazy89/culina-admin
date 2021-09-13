@@ -15,7 +15,7 @@ export const TableRow = ({
   index,
 }) => {
   const id = uuidv4();
-  console.log('ROW');
+
   return (
     <tr
       key={id}

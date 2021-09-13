@@ -27,7 +27,7 @@ const Dashboard = ({
       getDashboardInfo();
     }
   }, [companies.length, dashboardData, getCompanies, getDashboardInfo]);
-  console.log(companies);
+
   return loadingCompanies ? (
     <Spinner />
   ) : (
