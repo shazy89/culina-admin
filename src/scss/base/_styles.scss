@@ -64,3 +64,9 @@
 .grey_bottom-border {
     border-bottom: 1px solid rgba(151, 151, 151, 0.479);
 }
+.spinner_center  {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}

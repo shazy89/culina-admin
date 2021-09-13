@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { login } from '../../actions/auth';
 import Alert from '../layout/Alerts';
-import Spinner from '../layout/Spinner';
+
 const LoginDev = ({ login, isAuthenticated, alerts, loading }) => {
   //const [serverDelay, setServerDelay] = useState(false);
   const [formData, setFormData] = useState({
@@ -22,9 +22,7 @@ const LoginDev = ({ login, isAuthenticated, alerts, loading }) => {
     e.preventDefault();
     login(email, password);
   };
-  if (loading) {
-    return <Spinner />;
-  }
+
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
@@ -42,47 +40,57 @@ const LoginDev = ({ login, isAuthenticated, alerts, loading }) => {
             <h4>Password: 123123</h4>
           </div>
 
-          <form className="culina__auth--form" onSubmit={onSubmit}>
-            <div className="culina__auth--form-group">
-              <label
-                type="text"
-                name="email"
-                className="culina__auth--form-label"
-              >
-                Email Address
-              </label>
-              <input
-                className="culina__auth--form-input"
-                type="email"
-                placeholder="Email Address"
-                name="email"
-                value={email}
-                onChange={onChange}
-                required
+          {loading ? (
+            <div className="spinner_center u-margin-top-4">
+              <h3>Loading .....</h3>
+              <Spinner
+                animation="grow"
+                style={{ width: '5rem', height: '5rem' }}
               />
             </div>
-            <div className="culina__auth--form-group">
-              <label
-                className="culina__auth--form-label"
-                type="text"
-                name="password"
-              >
-                Password
-              </label>
-              <input
-                className="culina__auth--form-input"
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={onChange}
-                minLength="6"
-              />
-            </div>
-            <Button type="submit" size="lg">
-              Log In
-            </Button>
-          </form>
+          ) : (
+            <form className="culina__auth--form" onSubmit={onSubmit}>
+              <div className="culina__auth--form-group">
+                <label
+                  type="text"
+                  name="email"
+                  className="culina__auth--form-label"
+                >
+                  Email Address
+                </label>
+                <input
+                  className="culina__auth--form-input"
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  value={email}
+                  onChange={onChange}
+                  required
+                />
+              </div>
+              <div className="culina__auth--form-group">
+                <label
+                  className="culina__auth--form-label"
+                  type="text"
+                  name="password"
+                >
+                  Password
+                </label>
+                <input
+                  className="culina__auth--form-input"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={onChange}
+                  minLength="6"
+                />
+              </div>
+              <Button type="submit" size="lg">
+                Log In
+              </Button>
+            </form>
+          )}
         </div>
       </div>
     </section>
